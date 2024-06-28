@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+
+  ollama-gemma2b:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "11438:11434"
+
