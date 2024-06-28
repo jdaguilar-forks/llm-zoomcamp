@@ -27,7 +27,7 @@ In this module, we'll look at using open-source LLMs instead.
 * Creating an instance with a GPU
 
 ```bash
-pip install -U transformers accelerate bitsandbytes
+pip install -U transformers accelerate bitsandbytes sentencepiece
 ```
 
 Links:
@@ -166,7 +166,7 @@ docker run -it \
 Pulling the model
 
 ```bash
-docker exec -it bash
+docker exec -it ollama bash
 ollama pull phi3
 ```
 
@@ -193,3 +193,8 @@ ollama pull phi3
 If you want to learn more about streamlit, you can
 use [this material](https://github.com/DataTalksClub/project-of-the-week/blob/main/2022-08-14-frontend.md)
 from [our repository with projects of the week](https://github.com/DataTalksClub/project-of-the-week/tree/main).
+
+# Notes
+
+* [Workaround by Pham Nguyen Hung to use ElasticSearch container with Saturn Cloud & Google Colab instead of minsearch](https://hung.bearblog.dev/llm-zoomcamp-zrok/)
+* Did you take notes? Add them above this line (Send a PR with *links* to your notes)
