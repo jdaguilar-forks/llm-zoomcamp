@@ -5,7 +5,7 @@
 
 
 
-LLM Zoomcamp - a free online course about real-life applications of LLMs. In 10 weeks you will learn how to build an AI bot that can answer questions about your 
+LLM Zoomcamp - a free online course about real-life applications of LLMs. In 10 weeks you will learn how to build an AI system that answers questions about your 
 knowledge base.
 
 
@@ -13,22 +13,22 @@ knowledge base.
   <a href="https://airtable.com/appPPxkgYLH06Mvbw/shr7WtxHEPXxaui0Q"><img src="https://user-images.githubusercontent.com/875246/185755203-17945fd1-6b64-46f2-8377-1011dcb1a444.png" height="50" /></a>
 </p>
 
+- Give us a star to support the course!
 - Register in [DataTalks.Club's Slack](https://datatalks.club/slack.html)
 - Join the [`#course-llm-zoomcamp`](https://app.slack.com/client/T01ATQK62F8/C06TEGTGM3J) channel
 - Join the [course Telegram channel with announcements](https://t.me/llm_zoomcamp)
 - The videos are published on [DataTalks.Club's YouTube channel](https://www.youtube.com/c/DataTalksClub) in [the course playlist](https://www.youtube.com/playlist?list=PL3MmuxUbc_hKiIVNf7DeEt_tGjypOYtKV)
 - [Frequently asked technical questions](https://docs.google.com/document/d/1m2KexowAXTmexfC5rVTCSnaShvdUQ8Ag2IEiwBDHxN0/edit?usp=sharing)
 - [Course Calendar](https://calendar.google.com/calendar/?cid=NjkxOThkOGFhZmUyZmQwMzZjNDFkNmE2ZDIyNjE5YjdiMmQyZDVjZTYzOGMxMzQyZmNkYjE5Y2VkNDYxOTUxY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
+
+
+## 2024 cohort 
+
+- Start date: June 17
 - [Materials specific to 2024 cohort](cohorts/2024/)
+ 
 
-
-We will cover topics like LLMs and RAG.
-
-Start date: June 17
-
-Give us a star to support the initiative! 
-
-Pre-requisites:
+### Pre-requisites
 
 * Comfortable with programming and Python
 * Comfortable with command line
@@ -42,12 +42,6 @@ We encourage [Learning in Public](learning-in-public.md)
 
 ### Pre-course workshops
 
-Introduction
-
-* build a simple Q&A system 
-* Video: https://www.youtube.com/watch?v=q-p36Ak6YI8
-* Code: https://github.com/alexeygrigorev/llm-rag-workshop
-
 Implement a search engine
 
 * Video: https://www.youtube.com/watch?v=nMrGK5QgPVE
@@ -60,31 +54,36 @@ Implement a search engine
 * Retrieval and the basics of search
 * OpenAI API
 * Simple RAG with Open AI
+* Text search with Elasticsearch
 
-### [Open-source LLMs and self-hosting LLMs](02-open-source/)
+### [Open-source LLMs](02-open-source/)
 
-* Simple RAG with Open-Source LLMs
+* Getting an environment with a GPU
+* Open-source models from HuggingFace Hub
+* Running LLMs on a CPU with Ollama
+* Creating a simple UI with Streamlit 
 
-### [Vector databases and retrieval techniques](03-vector-search/)
+### [Vector databases](03-vector-search/)
 
-* Embeddings
 * Vector search
-* Adding vectors to RAG
+* Creating and indexing embeddings
+* Vector search with Elasticsearch
 
 ### [Workshop: dlt](cohorts/2024/workshops/dlt.md)
 
 
-### [LLM orchestration and ingestion pipelines](04-orchestration/)
-
-* Ingesting data with Mage
-
-### [Monitoring and Guardrails](05-monitoring/)
+### [Monitoring and Guardrails](04-monitoring/)
 
 * Monitoring with ground-truth
 * Metrics (RAGAs)
 * Dashboarding with Grafana for visualization
 * Monitoring chat
 * Guardrails
+
+### [LLM orchestration and ingestion pipelines](05-orchestration/)
+
+* Ingesting data with Mage
+
 
 
 ### [Tips and Tricks for advanced RAG systems](06-best-practices/)
@@ -93,11 +92,7 @@ Implement a search engine
 
 ### LLM Zoomcamp 2024 Competition
 
-In the competition, you need to use LLMs to solve high school mathematics problems. 
-Your task is to develop models that can accurately solve these problems and submit your predictions.
-
-For more details, visit the [competition page](https://www.kaggle.com/competitions/llm-zoomcamp-2024-competition/overview).
-
+[More details](cohorts/2024/competition/)
 
 ### [Hands-on project](project.md)
 
@@ -109,7 +104,7 @@ For more details, visit the [competition page](https://www.kaggle.com/competitio
 
 - [Alexey Grigorev](https://linkedin.com/in/agrigorev/)
 - [Magdalena Kuhn](https://www.linkedin.com/in/magdalenakuhn/)
-
+- [Balaji Dhamodharan](https://www.linkedin.com/in/balaji-dhamodharan-91b45615/)
 
 ## Asking questions
 
