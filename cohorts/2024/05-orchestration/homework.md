@@ -250,9 +250,7 @@ What's the last document id?
 
 Also note the index name.
 
-    Indexing document fa136280
-
-    {'text': 'Yes, you need to pass the Capstone project to get the certificate. Homework is not mandatory, though it is recommended for reinforcing concepts, and the points awarded count towards your rank on the leaderboard.', 'section': 'General course-related questions', 'question': 'I missed the first homework - can I still get a certificate?', 'course': 'llm-zoomcamp', 'document_id': 'fa136280'}
+> Indexing document fa136280
 
 ## Q5. Testing the retrieval
 
@@ -263,6 +261,7 @@ Let's use the following query: "When is the next cohort?"
 
 What's the ID of the top matching result?
 
+> '_id': 'QhLUeJEByvfdnZ1klQS4'
 
 ## Q6. Reindexing
 
@@ -277,15 +276,7 @@ Let's re-execute the entire pipeline with the updated data.
 
 For the same query "When is the next cohort?". What's the ID of the top matching result?
 
-    documents_20240822_5158
-
-    http://elastic_host:9200
-
-    documents_20240822_5158
-
-    Sending script query: {'size': 5, 'query': {'bool': {'must': {'multi_match': {'query': 'When is the next cohort?', 'fields': ['question^3', 'text', 'section'], 'type': 'best_fields'}}}}, '_source': ['content']}
-
-    Raw response from Elasticsearch: {'took': 8, 'timed_out': False, '_shards': {'total': 1, 'successful': 1, 'skipped': 0, 'failed': 0}, 'hits': {'total': {'value': 68, 'relation': 'eq'}, 'max_score': 51.637394, 'hits': [{'_index': 'documents_20240822_5158', '_id': 'C72keJEBNldql2DdSrhw', '_score': 51.637394, '_source': {}}, {'_index': 'documents_20240822_5158', '_id': 'Pb2keJEBNldql2DdS7hr', '_score': 12.294948, '_ignored': ['text.keyword'], '_source': {}}, {'_index': 'documents_20240822_5158', '_id': 'VL2keJEBNldql2DdS7jM', '_score': 11.998447, '_source': {}}, {'_index': 'documents_20240822_5158', '_id': 'Vb2keJEBNldql2DdS7jQ', '_score': 10.954134, '_source': {}}, {'_index': 'documents_20240822_5158', '_id': 'Cr2keJEBNldql2DdSrhs', '_score': 10.394914, '_ignored': ['text.keyword'], '_source': {}}]}}
+>'_id': 'C72keJEBNldql2DdSrhw'
 
 ## Submit the results
 
