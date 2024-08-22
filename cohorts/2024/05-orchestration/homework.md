@@ -10,9 +10,9 @@ There are two ways of doing it:
 1. Incremental: you only update records that got changed, created or deleted
 2. Full update: you recreate the entire index from scratch
 
-In this homework, we'll look at full update. We will run our 
-indexing pipeline daily and re-create the index from scracth 
-each time we run. 
+In this homework, we'll look at full update. We will run our
+indexing pipeline daily and re-create the index from scracth
+each time we run.
 
 
 For that, we created two FAQ documents for LLM Zoomcamp
@@ -20,7 +20,7 @@ For that, we created two FAQ documents for LLM Zoomcamp
 * [version 1](https://docs.google.com/document/d/1qZjwHkvP0lXHiE4zdbWyUXSVfmVGzougDD6N37bat3E/edit)
 * [version 2](https://docs.google.com/document/d/1T3MdwUvqCL3jrh3d3VCXQ8xE0UqRzI3bfgpfBq3ZWG0/edit)
 
-First, we will run our ingestion pipeline with version 1 
+First, we will run our ingestion pipeline with version 1
 and then with version 2.
 
 ## Q1. Running Mage
@@ -53,7 +53,9 @@ Start it:
 
 Now mage is running on [http://localhost:6789/](http://localhost:6789/)
 
-What's the version of mage? 
+What's the version of mage?
+
+> R/ v0.9.72
 
 ## Creating a RAG pipeline
 
@@ -63,7 +65,7 @@ Create a RAG pipeline
 ## Q2. Reading the documents
 
 Now we can ingest the documents. Create a custom code ingestion
-block 
+block
 
 Let's read the documents. We will use the same code we used
 for parsing FAQ: [parse-faq-llm.ipynb](parse-faq-llm.ipynb)
@@ -81,6 +83,8 @@ How many FAQ documents we processed?
 * 2
 * 3
 * 4
+
+> R/ 1
 
 ## Q3. Chunking
 
@@ -122,7 +126,7 @@ def generate_document_id(doc):
     return document_id
 ```
 
-Note: if instead of a single dictionary you get a list, 
+Note: if instead of a single dictionary you get a list,
 add a for loop:
 
 ```python
@@ -143,13 +147,13 @@ How many documents (chunks) do we have in the output?
 * 86
 * 96
 
-
+> R/ 86
 
 ## Tokenization and embeddings
 
 We don't need any tokenization, so we skip it.
 
-Because currently it's required in mage, we can create 
+Because currently it's required in mage, we can create
 a dummy code block:
 
 * Create a custom code block
@@ -179,7 +183,7 @@ First, let's change the line where we read the index name:
 
 ```python
 index_name = kwargs.get('index_name', 'documents')
-``` 
+```
 
 To `index_name_prefix` - we will parametrize it with the day
 and time we run the pipeline
@@ -246,6 +250,9 @@ What's the last document id?
 
 Also note the index name.
 
+    Indexing document fa136280
+
+    {'text': 'Yes, you need to pass the Capstone project to get the certificate. Homework is not mandatory, though it is recommended for reinforcing concepts, and the points awarded count towards your rank on the leaderboard.', 'section': 'General course-related questions', 'question': 'I missed the first homework - can I still get a certificate?', 'course': 'llm-zoomcamp', 'document_id': 'fa136280'}
 
 ## Q5. Testing the retrieval
 
@@ -270,7 +277,15 @@ Let's re-execute the entire pipeline with the updated data.
 
 For the same query "When is the next cohort?". What's the ID of the top matching result?
 
+    documents_20240822_5158
 
+    http://elastic_host:9200
+
+    documents_20240822_5158
+
+    Sending script query: {'size': 5, 'query': {'bool': {'must': {'multi_match': {'query': 'When is the next cohort?', 'fields': ['question^3', 'text', 'section'], 'type': 'best_fields'}}}}, '_source': ['content']}
+
+    Raw response from Elasticsearch: {'took': 8, 'timed_out': False, '_shards': {'total': 1, 'successful': 1, 'skipped': 0, 'failed': 0}, 'hits': {'total': {'value': 68, 'relation': 'eq'}, 'max_score': 51.637394, 'hits': [{'_index': 'documents_20240822_5158', '_id': 'C72keJEBNldql2DdSrhw', '_score': 51.637394, '_source': {}}, {'_index': 'documents_20240822_5158', '_id': 'Pb2keJEBNldql2DdS7hr', '_score': 12.294948, '_ignored': ['text.keyword'], '_source': {}}, {'_index': 'documents_20240822_5158', '_id': 'VL2keJEBNldql2DdS7jM', '_score': 11.998447, '_source': {}}, {'_index': 'documents_20240822_5158', '_id': 'Vb2keJEBNldql2DdS7jQ', '_score': 10.954134, '_source': {}}, {'_index': 'documents_20240822_5158', '_id': 'Cr2keJEBNldql2DdSrhs', '_score': 10.394914, '_ignored': ['text.keyword'], '_source': {}}]}}
 
 ## Submit the results
 
