@@ -1,0 +1,126 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: rager/data_loaders/luminous_axiom.py
+  downstream_blocks:
+  - transcendent_eclipse
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - ingest
+  has_callback: false
+  language: python
+  name: Luminous axiom
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: luminous_axiom
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: rager/transformers/transcendent_eclipse.py
+  downstream_blocks:
+  - subliminal_diadem
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - chunking
+  has_callback: false
+  language: python
+  name: Transcendent eclipse
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - luminous_axiom
+  uuid: transcendent_eclipse
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file:
+      content: null
+      extension: py
+      language: python
+      modified_timestamp: 1724222635
+      name: subliminal_diadem.py
+      output: null
+      path: /home/src/llm/rager/data_exporters/subliminal_diadem.py
+      relative_path: llm/rager/data_exporters/subliminal_diadem.py
+      size: 2054
+    file_source:
+      path: rager/data_exporters/subliminal_diadem.py
+    templates:
+      elasticsearch:
+        variables:
+          connection_string: http://elastic_host:9200
+          dimensions: null
+          index_name: documents
+          number_of_replicas: 0
+          number_of_shards: 1
+          vector_column_name: embedding
+  downstream_blocks:
+  - sweet_explorer
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - vector_database
+  has_callback: false
+  language: python
+  name: Subliminal diadem
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - transcendent_eclipse
+  uuid: subliminal_diadem
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: rager/transformers/sweet_explorer.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: sweet explorer
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - subliminal_diadem
+  uuid: sweet_explorer
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-08-21 06:08:01.539904+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Hypnotic solaris
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: hypnotic_solaris
+variables:
+  index_name: documents_20240822_5158
+variables_dir: /home/src/mage_data/rager
+widgets: []
